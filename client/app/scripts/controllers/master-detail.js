@@ -184,7 +184,10 @@ angular.module('brandid.states.demo')
       return
     }
   }
-
+  $scope.createArticle = function(headline, body, type, source) {
+      $scope.masterDetailCtrl.articles.addArticle(headline, body, type, source).then(function () {
+      })
+  }
 
   $scope.createMonster = function() {
     // new up the model
@@ -237,6 +240,12 @@ angular.module('brandid.states.demo')
 
     });
 
+  }
+  $scope.editedArticle = {
+    headline: null,
+    body: null,
+    type: null,
+    source: null 
   }
 
   $scope.destroyMonster = function(monster) {

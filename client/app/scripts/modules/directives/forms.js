@@ -16,7 +16,7 @@ angular.module('brandid.directives.forms', [])
     link: function(scope, element, attrs) {
 
       // need to put a watch here because directive is loaded but Parse promise is not finished loading the monsters yet
-
+      console.log(scope)
       scope.editedArticle = {
         headline: null,
         body: null,
@@ -81,6 +81,7 @@ angular.module('brandid.directives.forms', [])
   return {
     restrict: 'A',
     transclude: true,
+    scope: true,
     templateUrl: "app/scripts/modules/directives/templates/newArticleForm.html",
     link: function(scope, element, attrs) {
 
@@ -92,17 +93,24 @@ angular.module('brandid.directives.forms', [])
       //   type: null,
       //   source: null
       // };
-      scope.articleToSave = {
-        headline: scope.editedArticle.headline,
-        body: scope.editedArticle.body,
-        type: scope.editedArticle.type,
-        source: scope.editedArticle.source
-      };
+      // scope.editedArticle.headline = null
+      // scope.editedArticle.body = null
+      // scope.editedArticle.type = null
+      // scope.editedArticle.source = null
+      // console.log("scopesdfg",scope.$parent.$parent.editedArticle)
+      // var headline = scope.$parent.$parent.editedArticle.headline,
+      //   body = scope.$parent.$parent.editedArticle.body,
+      //   type = scope.$parent.$parent.editedArticle.type,
+      //   source = scope.$parent.$parent.editedArticle.source;
+      console.log("parent",scope.$parent)
 
       
 
       scope.saveArticle = function() {
-
+        var headline = scope.$parent.$parent.editedArticle.headline,
+        body = scope.$parent.$parent.editedArticle.body,
+        type = scope.$parent.$parent.editedArticle.type,
+        source = scope.$parent.$parent.editedArticle.source;
         // put the form in a loading state
         var loadingContainer = $('#loadingContainer');
         addLoaderTo(loadingContainer, 'savingForm', 'Saving');
@@ -115,18 +123,11 @@ angular.module('brandid.directives.forms', [])
         // scope.articleToSave.setSource(scope.editedArticle.source);
 
         // perform the save
-        scope.articleToSave.save().then(function(article) {
+        scope.$parent.createArticle(headline, body, type, source)
 
           //remove the loader
           $('#savingForm').remove()
-
-          $location.path('/crud/' + article.id);
-
-        }, function(err) {
-          // catch any errors
-          alert('Error saving to Parse, check the console and network tab')
-          console.log(err)
-        });
+          $location.path('/');
 
 
       }

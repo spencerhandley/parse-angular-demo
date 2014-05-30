@@ -26,9 +26,9 @@
 
 
 
-
+		<div class="list" sortable>
 		<a href="#/crud/{{story.id}}"
-			class="block light-back-hover width-padding row-fluid top-padding bottom-padding light-border-top light-border-bottom"
+			class="article block light-back-hover width-padding row-fluid top-padding bottom-padding light-border-top light-border-bottom"
 			ng-repeat="story in eventCtrl.current.getStories()"
 			ng-animate="{ enter: 'waveForward-enter', leave: 'waveForward-leave' }"
 		>
@@ -68,6 +68,7 @@
 			</div>
 			
 		</a>
+	</div>
 
 		</div>
 	</div>

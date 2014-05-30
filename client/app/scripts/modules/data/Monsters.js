@@ -42,12 +42,11 @@ angular.module('brandid.models.Monsters', ['parse-angular.enhance'])
 			this.query.equalTo('id', id);
 			return this.find();
 		},
-		addArticle: function(articleId, headline, body, type, source) {
+		addArticle: function(headline, body, type, source) {
 	 		// save request_id to Parse
 	 		var _this = this;
 
 	 		var article = new Article;
-	 		article.setId(articleId);
 	 		article.setHeadline(headline);
 	 		article.setBody(body);
 	 		article.setType(type);

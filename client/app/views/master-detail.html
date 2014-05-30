@@ -2,7 +2,7 @@
 	
 	<div class="one-third light-dark-back shadow-ninja right-light inset" style="height: 1500px">
 
-	<div class="row-fluid top-padding bottom-padding width-padding light-border-top light-border-bottom">
+	<div class="list row-fluid top-padding bottom-padding width-padding light-border-top light-border-bottom">
 		<h2 class="human muted no-height-margin line height-btn inline">Articles</h2>
 		<a href="#/crud/article/new" class="navi-button-main pull-right inline">
 				<i class="icon icon-plus"></i>
@@ -22,8 +22,9 @@
 		</div>
 
 		<!-- <div class="horizontal-line full-fade"></div> -->
+		<div class="list" sortable>
 		<a href="#/crud/{{article.id}}"
-			class="block light-back-hover width-padding row-fluid top-padding bottom-padding light-border-top light-border-bottom"
+			class="article block light-back-hover width-padding row-fluid top-padding bottom-padding light-border-top light-border-bottom"
 			ng-repeat="article in masterDetailCtrl.articles.models"
 			ng-animate="{ enter: 'waveForward-enter', leave: 'waveForward-leave' }"
 		>
@@ -63,6 +64,7 @@
 			</div>
 			
 		</a>
+	</div>
 		<!-- <a  ng-click="transitionTo(item.state)"
 			class="block light-back-hover width-padding row-fluid top-padding bottom-padding light-border-top light-border-bottom"
 			ng-class="isActiveState(item.state)"
