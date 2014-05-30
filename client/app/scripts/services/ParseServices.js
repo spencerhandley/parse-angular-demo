@@ -2,8 +2,7 @@ angular.module('ParseServices', [])
 .factory('ParseSDK', function() {
 
   // pro-tip: swap these keys out for PROD keys automatically on deploy using grunt-replace
-  Parse.initialize("oInJV2JlcXR96EN0SQjee0n5FlRUAd0joyFXReve", "OOZa6rsbkIiRWyiNlmHVMgMIHAyTqPdHRg7N1PxO");
-
+  Parse.initialize("8KdbTJ3jGt5Jr4d8OIYeo4xCKRiureR9HahNtUgB", "TNn0Mi3y5HIw4Fs9v1Bz0gign2FKdC3gZufL7mfP");
   // FACEBOOK init
   window.fbPromise.then(function() {
 

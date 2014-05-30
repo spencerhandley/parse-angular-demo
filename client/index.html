@@ -25,7 +25,6 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular-animate.js"></script>
 
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="//cloud.typography.com/7370432/708202/css/fonts.css" />
     
   </head>
   <body>
@@ -39,7 +38,6 @@
 
     <div class="row-fluid med-grey-back dark-dust min-height-1500">
 
-      <div ng-include src="'app/views/header.html'"></div>
       <div view-loading ng-show="isViewLoading"></div>
       <div ui-view class="first-load"></div>
 
@@ -74,7 +72,6 @@
     <script src="app/scripts/modules/directives/loader.js"></script>
     
     <!-- Controllers -->
-    <script src="app/scripts/controllers/menu.js"></script>
     <script src="app/scripts/controllers/master-detail.js"></script>
     <script src="app/scripts/controllers/detail.js"></script>
     <script src="app/scripts/controllers/facebook-example.js"></script>
@@ -124,25 +121,6 @@
         angular.bootstrap(document, ['app']);
       });
 
-    </script>
-    
-    <!-- real-time analytics - remember to remove this for your own site -->
-    <script type="text/javascript">
-      var GoSquared = {};
-      GoSquared.acct = "GSN-123809-O";
-      (function(w){
-        function gs(){
-          w._gstc_lt = +new Date;
-          var d = document, g = d.createElement("script");
-          g.type = "text/javascript";
-          g.src = "//d1l6p2sc9645hc.cloudfront.net/tracker.js";
-          var s = d.getElementsByTagName("script")[0];
-          s.parentNode.insertBefore(g, s);
-        }
-        w.addEventListener ?
-          w.addEventListener("load", gs, false) :
-          w.attachEvent("onload", gs);
-      })(window);
     </script>  
 
   </body>

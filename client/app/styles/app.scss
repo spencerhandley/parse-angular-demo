@@ -24,6 +24,9 @@ a.block {
 .withRadius {
 	@include border-radius(2px);
 }
+.inline {
+	display:inline
+}
 
 /**
  * Angular

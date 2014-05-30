@@ -1,8 +1,8 @@
 <div class="row-fluid">
 	<div class="navi-bar-title dark">
 
-
-		    <h1 class="human title">EVENTS</h1>
+			<a class="navi-button-prev" ng-click="goBackTo('demo.crud')"> back </a>
+		    <h1 class="human title">{{eventCtrl.current.getEventName()}} Articles</h1>
 		    <!-- <a ng-click="createMonster()" class="navi-button-main">
 				<i class="icon icon-plus"></i>
 			</a> -->
@@ -22,29 +22,43 @@
 			</div>
 			
 		</div> -->
-		<div class="row-fluid white-back withShadow withRadius center-align">
-		<a href="#/crud/{{event.id}}/list"
-			class="block row-fluid top-padding bottom-padding relative light-border-bottom white-border-top"
-			ng-repeat="event in masterDetailCtrl.events.models"
+
+
+
+
+
+		<a href="#/crud/{{story.id}}"
+			class="block light-back-hover width-padding row-fluid top-padding bottom-padding light-border-top light-border-bottom"
+			ng-repeat="story in eventCtrl.current.getStories()"
 			ng-animate="{ enter: 'waveForward-enter', leave: 'waveForward-leave' }"
 		>
 			<div class="span90-10 muted">
-				<div class="row-fluid tiny-bottom-margin">
-					<div class="span20-80 right-align">
-						<span class="machine bold">Event Name:</span>	
-					</div>
-					<div class="span80-20 left-align">
-						<div class="small-left-margin machine">{{event.getEventName()}}</div>
-					</div>
-				</div>
 				<div class="row-fluid ">
 					<div class="span20-80 right-align">
-						<span class="machine bold"># of Articles:</span>	
+						<span class="machine bold">Headline:</span>	
 					</div>
 					<div class="span80-20 left-align">
-						<div class="small-left-margin machine">{{event.getStories().length}}</div>
+						<div class="small-left-margin machine">{{story.headline}}</div>
 					</div>
 				</div>
+				<div class="row-fluid t">
+					<div class="span20-80 right-align">
+						<span class="machine bold">Type:</span>	
+					</div>
+					<div class="span80-20 left-align">
+						<div class="small-left-margin machine">{{story.type}}</div>
+					</div>
+				</div>
+<!-- 
+				<div class="row-fluid">
+					<div class="span20-80 right-align">
+						<span class="machine bold">Source:</span>	
+					</div>
+					<div class="span80-20 left-align">
+						<span class="small-left-margin machine">{{article.getSource()}}</span>
+					</div>
+				</div> -->
+					
 			</div>
 
 			<div class="span10-90 muted center-align small-top-padding">

@@ -1,19 +1,30 @@
 angular.module('brandid.states.demo')
 
-.controller('MasterDetailController', ['$rootScope', '$location', '$scope', '$state', 'monsters', function($rootScope, $location, $scope, $state, monsters) {
+.controller('MasterDetailController', ['$rootScope', '$location', '$scope', '$state', 'monsters', 'articles', 'events', function($rootScope, $location, $scope, $state, monsters, articles, events) {
     
   // this controller controls navigation, navigation animations, menu and master-detail layout
 
-
-
-
   // NB: there are a number of implementations for a menu. This one is not great, but simple enough to start with
+  $scope.masterEventsCtrl = {
+      // waiting on ui-router to support angular 1.2 dynamic animations properly, for now everything is 'crossfade'
+      // https://github.com/angular-ui/ui-router/issues/320
+      animate : "crossfade",
+      collection: events,
+  };
+  $scope.masterArticlesCtrl = {
+      // waiting on ui-router to support angular 1.2 dynamic animations properly, for now everything is 'crossfade'
+      // https://github.com/angular-ui/ui-router/issues/320
+      animate : "crossfade",
+      collection: articles,
+  };
   $scope.masterDetailCtrl = {
     // waiting on ui-router to support angular 1.2 dynamic animations properly, for now everything is 'crossfade'
     // https://github.com/angular-ui/ui-router/issues/320
 
     animate : "crossfade",
     collection: monsters,
+    articles: articles,
+    events: events,
     menu : [
       {
         title: "Angular Parse CRUD",
